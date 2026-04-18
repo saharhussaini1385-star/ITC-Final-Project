@@ -1,146 +1,287 @@
-<!doctype html>
+`html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Global Bridge Leaders</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Global Bridge Leaders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    body { background-color: #f8f9fa; }
+    .navbar { background: linear-gradient(135deg, #2c6e6a, #3a8a85); padding: 15px 0; }
+    .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 22px; }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; margin: 0 5px; transition: 0.3s; }
+    .nav-link:hover { color: #f0c030 !important; }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600') center/cover no-repeat;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,110,106,0.88), rgba(58,138,133,0.85)); }
+    .hero-content { position: relative; z-index: 1; padding: 20px; }
+    .hero h1 { font-size: 62px; font-weight: 700; margin-bottom: 20px; color: #f0c030; }
+    .hero p { font-size: 22px; opacity: 0.95; max-width: 700px; margin: 0 auto 30px auto; }
+    .btn-hero { background: #f0c030; color: #2c6e6a; font-weight: 700; padding: 16px 45px; border-radius: 30px; border: none; font-size: 18px; transition: 0.3s; text-decoration: none; display: inline-block; }
+    .btn-hero:hover { background: #d4ac0d; transform: scale(1.05); color: #2c6e6a; }
+    .btn-hero-outline { background: transparent; color: white; font-weight: 700; padding: 16px 45px; border-radius: 30px; border: 2px solid white; font-size: 18px; transition: 0.3s; text-decoration: none; display: inline-block; margin-left: 15px; }
+    .btn-hero-outline:hover { background: white; color: #2c6e6a; }
+
+    .section-title { color: #2c6e6a; font-weight: 700; text-align: center; margin-bottom: 10px; }
+    .section-line { width: 60px; height: 4px; background: #f0c030; margin: 0 auto 40px auto; border-radius: 2px; }
+
+    .welcome-section { padding: 80px 20px; }
+    .welcome-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(44,110,106,0.2); }
+    .welcome-img img { width: 100%; height: 420px; object-fit: cover; }
+    .welcome-text h2 { color: #2c6e6a; font-weight: 700; font-size: 38px; margin-bottom: 20px; }
+    .welcome-text p { color: #555; font-size: 16px; line-height: 1.9; }
+    .welcome-badge { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; padding: 6px 18px; border-radius: 20px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 15px; }
+
+    .facts-section {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 100px 20px;
+    }
+    .facts-section::before { content: ''; position: absolute; inset: 0; background: rgba(44,110,106,0.90); }
+    .facts-section .container { position: relative; z-index: 1; }
+    .fact-card { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 35px; text-align: center; color: white; backdrop-filter: blur(5px); transition: transform 0.3s; }
+    .fact-card:hover { transform: translateY(-8px); }
+    .fact-icon { font-size: 50px; color: #f0c030; margin-bottom: 15px; }
+    .fact-number { font-size: 48px; font-weight: 700; color: #f0c030; }
+    .fact-card p { opacity: 0.9; margin: 0; }
+    .countries-section { padding: 80px 20px; background: #f0f9f8; }
+    .country-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(44,110,106,0.12); transition: transform 0.3s; }
+    .country-card:hover { transform: translateY(-8px); }
+    .country-card img { width: 100%; height: 200px; object-fit: cover; }
+    .country-card-body { padding: 20px; text-align: center; }
+    .country-card-body h5 { color: #2c6e6a; font-weight: 700; }
+
+    .cta-section {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 120px 20px;
+      text-align: center;
+      color: white;
+    }
+    .cta-section::before { content: ''; position: absolute; inset: 0; background: rgba(44,110,106,0.88); }
+    .cta-section .container { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: 48px; font-weight: 700; }
+
+    footer { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; padding: 40px 20px; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: #f0c030; }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: rgba(31,63,70,.95); backdrop-filter: blur(8px);">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Global Bridge Leaders</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gblNav">
+    <a class="navbar-brand" href="index.html">🌍 Global Bridge Leaders</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="gblNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="program.html">Program</a></li>
-        <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <div class="ms-auto">
+        <a class="nav-link d-inline active" href="index.html">Home</a>
+        <a class="nav-link d-inline" href="about.html">About</a>
+        <a class="nav-link d-inline" href="program.html">Program</a>
+        <a class="nav-link d-inline" href="team.html">Team</a>
+        <a class="nav-link d-inline" href="pricing.html">Pricing</a>
+        <a class="nav-link d-inline" href="services.html">Services</a>
+        <a class="nav-link d-inline" href="faq.html">FAQ</a>
+        <a class="nav-link d-inline" href="contact.html">Contact</a>
+      </div>
     </div>
   </div>
 </nav>
 
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Global Bridge Leaders</h1>
+    <p>Discover the World, Empowering Young Leaders Through Cultural Exchange</p>
+    <a href="program.html" class="btn-hero">Explore Program</a>
+    <a href="contact.html" class="btn-hero-outline">Apply Now</a>
+  </div>
+</div>
 
-<header class="hero">
+<!-- Welcome -->
+<div class="welcome-section">
   <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-7">
-        <span class="hero-badge">🌍 International Youth Leadership & Cultural Exchange</span>
-        <h1 class="display-4 fw-bold mb-3">Discover the World: Empowering Young Leaders Through Cultural Exchange.</h1>
-        <p class="lead mb-4">Global Bridge Leaders (GBL) is a cultural and leadership development program that connects young people from around the world. We bring together participants aged 14 to 35 to explore new cultures, exchange ideas, and build leadership skills.</p>
-        <p class="mb-4">Through immersive experiences in Japan, Singapore, China, Greece, and England, participants live, learn, and grow together. This program is more than travel, it is a life-changing journey that transforms individuals into globally minded leaders.</p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="contact.html" class="btn btn-light btn-lg">Apply Now</a>
-          <a href="program.html" class="btn btn-outline-light btn-lg">Explore the Program</a>
+    <div class="row align-items-center g-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="welcome-img">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800" alt="Welcome">
         </div>
       </div>
-      <div class="col-lg-5">
-        <div class="soft-card p-4 p-lg-5 text-dark">
-          <h3 class="mb-3">Why GBL?</h3>
-          <div class="d-grid gap-3">
-            <div class="fact-item">✈️ Participants experience multiple world cities across a 14-day journey.</div>
-            <div class="fact-item">🤝 Every day includes cultural exchange with international peers.</div>
-            <div class="fact-item">🎓 The program is designed by students for future global leaders.</div>
-            <div class="fact-item">💡 Each team member has a specialized leadership role, just like a real organization.</div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="welcome-text">
+          <span class="welcome-badge">Welcome to GBL</span>
+          <h2>Building Bridges Between Cultures</h2>
+          <p>Global Bridge Leaders (GBL) is a cultural exchange program that empowers young leaders aged 14-35 from around the world. Through immersive 14-day experiences in host countries, we build leadership skills, cultural understanding, and global connections.</p>
+          <p>Join us and become part of a growing community of young changemakers who are making the world a more connected and compassionate place.</p>
+          <a href="about.html" class="btn mt-3" style="background:linear-gradient(135deg,#2c6e6a,#3a8a85);color:white;border-radius:25px;padding:12px 30px;font-weight:600;">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fun Facts -->
+<div class="facts-section">
+  <div class="container">
+    <h2 class="text-white text-center fw-bold mb-2">Fun Facts About GBL</h2>
+    <div class="section-line"></div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="fact-card">
+          <div class="fact-icon"><i class="bi bi-globe2"></i></div>
+          <div class="fact-number">6</div>
+          <p>Host Countries Around the World</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="fact-card">
+          <div class="fact-icon"><i class="bi bi-people-fill"></i></div>
+          <div class="fact-number">500+</div>
+          <p>Young Leaders Empowered</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="fact-card">
+          <div class="fact-icon"><i class="bi bi-calendar-check"></i></div>
+          <div class="fact-number">14</div>
+          <p>Days of Transformative Experience</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="fact-card">
+          <div class="fact-icon"><i class="bi bi-star-fill"></i></div>
+          <div class="fact-number">100%</div>
+          <p>Scholarship Opportunities Available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Host Countries -->
+<div class="countries-section">
+  <div class="container">
+    <h2 class="section-title">Our Host Countries</h2>
+    <div class="section-line"></div>
+    <div class="row g-4">
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800" alt="Japan">
+          <div class="country-card-body">
+            <h5>🇯🇵 Japan — Tokyo</h5>
+            <p class="text-muted small">A unique mix of ancient tradition and cutting-edge modernity.</p>
           </div>
         </div>
       </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800" alt="Singapore">
+          <div class="country-card-body">
+            <h5>🇸🇬 Singapore</h5>
+            <p class="text-muted small">A vibrant city-state where cultures of the world meet.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=800" alt="Greece">
+          <div class="country-card-body">
+            <h5>🇬🇷 Greece — Athens</h5>
+            <p class="text-muted small">The cradle of civilization with stunning ancient history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800" alt="England">
+          <div class="country-card-body">
+            <h5>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England — Birmingham</h5>
+            <p class="text-muted small">A diverse and dynamic city with rich cultural heritage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800" alt="China">
+          <div class="country-card-body">
+            <h5>🇨🇳 China — Beijing</h5>
+            <p class="text-muted small">Discover the Great Wall and thousands of years of history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="country-card">
+          <img src="https://images.unsplash.com/photo-1612892483236-52d32a0e0ac1?w=800" alt="Afghanistan">
+          <div class="country-card-body">
+            <h5>🇦🇫 Afghanistan — Kabul</h5>
+            <p class="text-muted small">A land of resilient people and breathtaking landscapes.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</header>
+</div>
 
-<section class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">A Global Experience with Purpose</h2>
-      <p class="section-subtitle mx-auto">We believe travel becomes meaningful when it builds respect, empathy, leadership, and collaboration across cultures.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-xl-3">
-        <div class="info-card card p-4">
-          <div class="icon-circle">🌍</div>
-          <h5>Cultural Exchange</h5>
-          <p class="mb-0">Learn directly from diverse traditions, values, and perspectives through shared experiences.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-3">
-        <div class="info-card card p-4">
-          <div class="icon-circle">🎓</div>
-          <h5>Leadership Development</h5>
-          <p class="mb-0">Build communication, teamwork, and problem-solving skills in an international setting.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-3">
-        <div class="info-card card p-4">
-          <div class="icon-circle">🤝</div>
-          <h5>Global Networking</h5>
-          <p class="mb-0">Create connections with participants and collaborators from many countries.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-3">
-        <div class="info-card card p-4">
-          <div class="icon-circle">✈️</div>
-          <h5>International Experience</h5>
-          <p class="mb-0">Travel, explore cities, and gain confidence in a multicultural learning environment.</p>
-        </div>
-      </div>
-    </div>
+<!-- CTA -->
+<div class="cta-section">
+  <div class="container" data-aos="zoom-in">
+    <h2>Ready to Change Your World? 🌍</h2>
+    <p class="mb-4 fs-5">Apply now and join the next generation of global leaders.</p>
+    <a href="contact.html" class="btn-hero">Apply Now</a>
+    <a href="program.html" class="btn-hero-outline">Learn More</a>
   </div>
-</section>
+</div>
 
-<section class="py-5">
+<footer>
   <div class="container">
-    <div class="cta-box p-4 p-lg-5">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-8">
-          <h2 class="fw-bold mb-2">Become part of a global community of future leaders.</h2>
-          <p class="mb-0">Anyone aged 14 to 35 from any country can apply. Selection is based on motivation, leadership potential, and interest in cultural exchange.</p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="contact.html" class="btn btn-light btn-lg">Start Your Journey</a>
-        </div>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>🌍 Global Bridge Leaders</h5>
+        <p style="color:rgba(255,255,255,0.7)">Connecting Cultures. Building Leaders.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6>Quick Links</h6>
+        <a href="about.html" class="d-block">About</a>
+        <a href="program.html" class="d-block">Program</a>
+        <a href="pricing.html" class="d-block">Pricing</a>
+        <a href="contact.html" class="d-block">Contact</a>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h6>Contact</h6>
+        <p style="color:rgba(255,255,255,0.7)">support@globalbridgeleaders.org</p>
       </div>
     </div>
-  </div>
-</section>
-
-
-<footer class="footer mt-5 pt-5 pb-4">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <h5 class="text-white">Global Bridge Leaders</h5>
-        <p class="mb-0">Connecting Cultures. Building Leaders.</p>
-      </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">Quick Links</h6>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="about.html">About</a>
-          <a href="program.html">Program</a>
-          <a href="team.html">Team</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">General Contact</h6>
-        <p class="mb-1"><a href="mailto:support@globalbridgeleaders.org">support@globalbridgeleaders.org</a></p>
-        <p class="mb-0 small">© 2026 Global Bridge Leaders. All rights reserved.</p>
-      </div>
-    </div>
+    <hr style="border-color:rgba(255,255,255,0.2)">
+    <p class="text-center mb-0" style="color:rgba(255,255,255,0.6)">© 2026 Global Bridge Leaders | AUAF ITC Final Project</p>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
+`

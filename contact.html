@@ -1,175 +1,223 @@
-<!doctype html>
+`html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact | Global Bridge Leaders</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Global Bridge Leaders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    body { background-color: #f8f9fa; }
+    .navbar { background: linear-gradient(135deg, #2c6e6a, #3a8a85); padding: 15px 0; }
+    .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 22px; }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; margin: 0 5px; transition: 0.3s; }
+    .nav-link:hover { color: #f0c030 !important; }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 120px 20px;
+      text-align: center;
+      color: white;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,110,106,0.88), rgba(58,138,133,0.88)); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 15px; }
+    .hero p { font-size: 20px; opacity: 0.9; }
+
+    .section-title { color: #2c6e6a; font-weight: 700; text-align: center; margin-bottom: 10px; }
+    .section-line { width: 60px; height: 4px; background: #f0c030; margin: 0 auto 40px auto; border-radius: 2px; }
+
+    .dept-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(44,110,106,0.1); border-left: 5px solid #3a8a85; margin-bottom: 20px; transition: transform 0.3s; }
+    .dept-card:hover { transform: translateY(-5px); }
+    .dept-card h5 { color: #2c6e6a; font-weight: 700; }
+    .dept-card p { color: #555; margin-bottom: 5px; }
+    .dept-card a { color: #3a8a85; text-decoration: none; font-weight: 600; }
+    .dept-card a:hover { color: #f0c030; }
+
+    .form-section {
+      background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 80px 20px;
+    }
+    .form-section::before { content: ''; position: absolute; inset: 0; background: rgba(44,110,106,0.92); }
+    .form-section .container { position: relative; z-index: 1; }
+    .form-card { background: white; border-radius: 20px; padding: 50px 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .form-card h2 { color: #2c6e6a; font-weight: 700; margin-bottom: 30px; }
+    .form-control { border-radius: 10px; border: 2px solid #e0e0e0; padding: 12px 15px; font-size: 15px; transition: 0.3s; }
+    .form-control:focus { border-color: #3a8a85; box-shadow: 0 0 0 0.2rem rgba(58,138,133,0.25); }
+    .form-label { font-weight: 600; color: #2c6e6a; }
+    .btn-submit { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; font-weight: 700; padding: 14px 40px; border-radius: 30px; border: none; font-size: 16px; transition: 0.3s; width: 100%; }
+    .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(44,110,106,0.4); }
+
+    .emergency-box { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; border-radius: 20px; padding: 40px; text-align: center; }
+    .emergency-box h4 { color: #f0c030; font-weight: 700; }
+    .emergency-box a { color: #f0c030; font-size: 18px; font-weight: 700; text-decoration: none; }
+
+    footer { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; padding: 40px 20px; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: #f0c030; }
+  </style>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: rgba(31,63,70,.95); backdrop-filter: blur(8px);">
+    <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Global Bridge Leaders</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gblNav">
+    <a class="navbar-brand" href="index.html">🌍 Global Bridge Leaders</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="gblNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="program.html">Program</a></li>
-        <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <div class="ms-auto">
+        <a class="nav-link d-inline" href="index.html">Home</a>
+        <a class="nav-link d-inline" href="about.html">About</a>
+        <a class="nav-link d-inline" href="program.html">Program</a>
+        <a class="nav-link d-inline" href="team.html">Team</a>
+        <a class="nav-link d-inline" href="pricing.html">Pricing</a>
+        <a class="nav-link d-inline" href="services.html">Services</a>
+        <a class="nav-link d-inline" href="faq.html">FAQ</a>
+        <a class="nav-link d-inline active" href="contact.html">Contact</a>
+      </div>
     </div>
   </div>
 </nav>
 
-
-<section class="page-hero">
-  <div class="container">
-    <h1 class="display-5 fw-bold mb-3">Contact Us</h1>
-    <p class="lead mb-0">Questions about applications, partnerships, finance, technical support, and general information.</p>
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>📬 Contact Us</h1>
+    <p>We're here to help you start your global journey</p>
   </div>
-</section>
+</div>
 
-<section class="py-5">
+<!-- Contact by Department -->
+<div class="container mt-5 py-4">
+  <h2 class="section-title">Contact by Department</h2>
+  <div class="section-line"></div>
+  <div class="row">
+
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="dept-card">
+        <h5><i class="bi bi-mortarboard-fill me-2"></i>Program & Applications</h5>
+        <p><strong>Zahra Noori</strong> — Program Coordinator</p>
+        <p class="text-muted small">For questions about applications, eligibility, program structure, and how the exchange works.</p>
+        <a href="mailto:zahra@globalbridgeleaders.org"><i class="bi bi-envelope me-1"></i>zahra@globalbridgeleaders.org</a>
+      </div>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="dept-card">
+        <h5><i class="bi bi-cash-coin me-2"></i>Finance & Donations</h5>
+        <p><strong>Falastin Ahamadyar</strong> — Finance Manager</p>
+        <p class="text-muted small">For scholarship questions, financial support, and donations to support students.</p>
+        <a href="mailto:falestin@globalbridgeleaders.org"><i class="bi bi-envelope me-1"></i>falestin@globalbridgeleaders.org</a>
+      </div>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="dept-card">
+        <h5><i class="bi bi-diagram-3-fill me-2"></i>Partnerships & Collaborations</h5>
+        <p><strong>Wahida Sadaqat</strong> — Executive Director</p>
+        <p class="text-muted small">For partnership opportunities, collaborations, and organizational inquiries.</p>
+        <a href="mailto:wahida@globalbridgeleaders.org"><i class="bi bi-envelope me-1"></i>wahida@globalbridgeleaders.org</a>
+      </div>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="dept-card">
+        <h5><i class="bi bi-tools me-2"></i>Technical Support</h5>
+        <p><strong>Azada Madadi</strong> — Technical Director</p>
+        <p class="text-muted small">For website issues, technical support, and GitHub or development-related questions.</p>
+        <a href="mailto:azada@globalbridgeleaders.org"><i class="bi bi-envelope me-1"></i>azada@globalbridgeleaders.org</a>
+      </div>
+    </div>
+
+    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+      <div class="dept-card">
+        <h5><i class="bi bi-palette-fill me-2"></i>Design & General Information</h5>
+        <p><strong>Sahar Hussaini</strong> — Creative Director</p>
+        <p class="text-muted small">For design-related questions, branding, and general project information.</p>
+        <a href="mailto:sahar@globalbridgeleaders.org"><i class="bi bi-envelope me-1"></i>sahar@globalbridgeleaders.org</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Contact Form -->
+<div class="form-section mt-5">
   <div class="container">
-    <div class="soft-card p-4 p-lg-5 mb-4">
-      <h2 class="section-title">We’re here to help you</h2>
-      <p class="mb-0">If you have any questions about the program, applications, partnerships, or financial support, you can contact the right team member below. This helps us respond faster and more effectively.</p>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6 col-xl-4">
-        <div class="contact-card card p-4">
-          <h5> Program & Applications</h5>
-          <p><strong>Zahra Noori – Program Coordinator</strong></p>
-          <p>For questions about applications, eligibility, program structure, and how the exchange works.</p>
-         <p class="mb-0">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zahra.noori@auaf.edu.af" target="_blank">
-    zahra@globalbridgeleadersorg
-  </a>
-</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="contact-card card p-4">
-          <h5> Finance & Donations</h5>
-          <p><strong>Falestin Ahamadyar – Finance Manager</strong></p>
-          <p>For program fees, scholarships, financial questions, and donations to support students.</p>
-        <p class="mb-0">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=falestin.ahamadyar@auaf.edu.af" target="_blank">
-    falestin@globalbridgeleaders.org
-  </a>
-</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="contact-card card p-4">
-          <h5> Partnerships & Collaborations</h5>
-          <p><strong>Wahida Sadaqat – Executive Director & Project Lead</strong></p>
-          <p>For partnership opportunities, collaborations, and organizational inquiries.</p>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wahida.sadaqat@auaf.edu.af" target="_blank">
-    wahida@globalbridgeleaders.org
-  </a> 
-        </div>
-      </div>
-      <div class="col-md-6 col-xl-6">
-        <div class="contact-card card p-4">
-          <h5> Technical Support</h5>
-          <p><strong>Azada Madadi – Technical Director</strong></p>
-          <p>For website issues, technical support, and GitHub or development-related questions.</p>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=azada.madadi@auaf.edu.af" target="_blank">
-    azada@globalbridgeleaders.org
-  </a>
-      </div>
-      <div class="col-md-6 col-xl-6">
-        <div class="contact-card card p-4">
-          <h5> Design & General Information</h5>
-          <p><strong>Sahar Hussaini – Creative Director</strong></p>
-          <p>For design-related questions, branding, and general project information.</p>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sahar.hossaini@auaf.edu.af" target="_blank">
-    sahar@globalbridgeleaders.org
-  </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-4 mt-2">
-      <div class="col-lg-7">
-        <div class="soft-card p-4 p-lg-5">
-          <h3 class="section-title">General Message Form</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-8" data-aos="fade-up">
+        <div class="form-card">
+          <h2 class="text-center">✉️ Send Us a Message</h2>
           <form>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Name</label>
-                <input type="text" class="form-control" placeholder="Your name">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Your full name">
               </div>
-              <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="you@example.com">
-              </div>
-              <div class="col-12">
-                <label class="form-label">Subject</label>
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="col-12">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" rows="5" placeholder="Write your message"></textarea>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-brand text-white">Submit Button</button>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="your@email.com">
               </div>
             </div>
+            <div class="mb-3">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-control" placeholder="What is your message about?">
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="5" placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="bi bi-send-fill me-2"></i>Send Message
+            </button>
           </form>
         </div>
       </div>
-      <div class="col-lg-5">
-        <div class="soft-card p-4 p-lg-5 h-100">
-          <h3 class="section-title">Extra Tip</h3>
-          <p class="mb-3"> Emergency Contact Line</p>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@auaf.edu.af" target="_blank">
-    support@globalbridgeleaders.org 
-  </a>
-        </div>
-      </div>
     </div>
   </div>
-</section>
+</div>
 
+<!-- Emergency Contact -->
+<div class="container mt-5 mb-5">
+  <div class="emergency-box" data-aos="zoom-in">
+    <h4><i class="bi bi-telephone-fill me-2"></i>Emergency Contact Line</h4>
+    <p class="text-white mt-2">For urgent inquiries, please contact:</p>
+    <a href="mailto:support@globalbridgeleaders.org">support@globalbridgeleaders.org</a>
+  </div>
+</div>
 
-<footer class="footer mt-5 pt-5 pb-4">
+<footer>
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <h5 class="text-white">Global Bridge Leaders</h5>
-        <p class="mb-0">Connecting Cultures. Building Leaders.</p>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>🌍 Global Bridge Leaders</h5>
+        <p style="color:rgba(255,255,255,0.7)">Connecting Cultures. Building Leaders.</p>
       </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">Quick Links</h6>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="about.html">About</a>
-          <a href="program.html">Program</a>
-          <a href="team.html">Team</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="contact.html">Contact</a>
-        </div>
+      <div class="col-md-4 mb-3">
+        <h6>Quick Links</h6>
+        <a href="about.html" class="d-block">About</a>
+        <a href="program.html" class="d-block">Program</a>
+        <a href="pricing.html" class="d-block">Pricing</a>
+        <a href="contact.html" class="d-block">Contact</a>
       </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">General Contact</h6>
-        <p class="mb-1"><a href="mailto:support@globalbridgeleaders.org">support@globalbridgeleaders.org</a></p>
-        <p class="mb-0 small">© 2026 Global Bridge Leaders. All rights reserved.</p>
+      <div class="col-md-4 mb-3">
+        <h6>Contact</h6>
+        <p style="color:rgba(255,255,255,0.7)">support@globalbridgeleaders.org</p>
       </div>
     </div>
+    <hr style="border-color:rgba(255,255,255,0.2)">
+    <p class="text-center mb-0" style="color:rgba(255,255,255,0.6)">© 2026 Global Bridge Leaders | AUAF ITC Final Project</p>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
+`

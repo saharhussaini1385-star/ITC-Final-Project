@@ -1,171 +1,315 @@
-<!doctype html>
+`html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Program | Global Bridge Leaders</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program - Global Bridge Leaders</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    body { background-color: #f8f9fa; }
+    .navbar { background: linear-gradient(135deg, #2c6e6a, #3a8a85); padding: 15px 0; }
+    .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 22px; }
+    .nav-link { color: rgba(255,255,255,0.85) !important; font-weight: 500; margin: 0 5px; transition: 0.3s; }
+    .nav-link:hover { color: #f0c030 !important; }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 120px 20px;
+      text-align: center;
+      color: white;
+    }
+    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,110,106,0.88), rgba(58,138,133,0.88)); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 15px; }
+    .hero p { font-size: 20px; opacity: 0.9; }
+
+    .section-title { color: #2c6e6a; font-weight: 700; text-align: center; margin-bottom: 10px; }
+    .section-line { width: 60px; height: 4px; background: #f0c030; margin: 0 auto 40px auto; border-radius: 2px; }
+
+    .module-card { background: white; border-radius: 20px; padding: 35px; box-shadow: 0 10px 30px rgba(44,110,106,0.12); transition: transform 0.3s; height: 100%; border-top: 5px solid #3a8a85; }
+    .module-card:hover { transform: translateY(-8px); }
+    .module-number { width: 55px; height: 55px; background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: #f0c030; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+    .module-card h4 { color: #2c6e6a; font-weight: 700; margin-bottom: 15px; }
+    .module-card ul li { color: #555; margin-bottom: 8px; }
+
+    .cycle-section {
+      background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 100px 20px;
+    }
+    .cycle-section::before { content: ''; position: absolute; inset: 0; background: rgba(44,110,106,0.90); }
+    .cycle-section .container { position: relative; z-index: 1; }
+    .cycle-card { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 35px; text-align: center; color: white; backdrop-filter: blur(5px); transition: transform 0.3s; }
+    .cycle-card:hover { transform: translateY(-8px); }
+    .cycle-icon { font-size: 50px; color: #f0c030; margin-bottom: 15px; }
+    .cycle-card h4 { font-weight: 700; color: #f0c030; margin-bottom: 10px; }
+    .cycle-day { background: #f0c030; color: #2c6e6a; font-weight: 700; padding: 4px 14px; border-radius: 20px; font-size: 13px; display: inline-block; margin-bottom: 15px; }
+
+    .countries-section { background: #f0f9f8; padding: 80px 20px; }
+    .country-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 5px 20px rgba(44,110,106,0.1); transition: transform 0.3s; }
+    .country-card:hover { transform: translateY(-5px); }
+    .country-flag { font-size: 50px; margin-bottom: 10px; }
+    .country-card h5 { color: #2c6e6a; font-weight: 700; }
+    .apply-section {
+      background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600') center/cover no-repeat;
+      position: relative;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+    .apply-section::before { content: ''; position: absolute; inset: 0; background: rgba(44,110,106,0.87); }
+    .apply-section .container { position: relative; z-index: 1; }
+    .apply-section h2 { font-size: 42px; font-weight: 700; }
+    .btn-apply { background: #f0c030; color: #2c6e6a; font-weight: 700; padding: 14px 40px; border-radius: 30px; border: none; font-size: 16px; transition: 0.3s; }
+    .btn-apply:hover { background: #d4ac0d; transform: scale(1.05); }
+
+    footer { background: linear-gradient(135deg, #2c6e6a, #3a8a85); color: white; padding: 40px 20px; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: #f0c030; }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: rgba(31,63,70,.95); backdrop-filter: blur(8px);">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Global Bridge Leaders</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gblNav">
+    <a class="navbar-brand" href="index.html">🌍 Global Bridge Leaders</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="gblNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="program.html">Program</a></li>
-        <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <div class="ms-auto">
+        <a class="nav-link d-inline" href="index.html">Home</a>
+        <a class="nav-link d-inline" href="about.html">About</a>
+        <a class="nav-link d-inline active" href="program.html">Program</a>
+        <a class="nav-link d-inline" href="team.html">Team</a>
+        <a class="nav-link d-inline" href="pricing.html">Pricing</a>
+        <a class="nav-link d-inline" href="services.html">Services</a>
+        <a class="nav-link d-inline" href="faq.html">FAQ</a>
+        <a class="nav-link d-inline" href="contact.html">Contact</a>
+      </div>
     </div>
   </div>
 </nav>
 
-
-<section class="page-hero">
-  <div class="container">
-    <h1 class="display-5 fw-bold mb-3">Program Structure</h1>
-    <p class="lead mb-0">A 14-day cultural and leadership experience across world-class destinations.</p>
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>📚 Program Structure</h1>
+    <p>A 14-day transformative journey through culture, leadership, and global connection</p>
   </div>
-</section>
+</div>
 
-<section class="py-5">
+<!-- Modules -->
+<div class="container mt-5 py-4">
+  <h2 class="section-title">Program Modules</h2>
+  <div class="section-line"></div>
+  <div class="row g-4">
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="module-card">
+        <div class="module-number">1</div>
+        <h4>Cultural Immersion</h4>
+        <ul>
+          <li>Local community visits</li>
+          <li>Traditional food experiences</li>
+          <li>Language & communication basics</li>
+          <li>Cultural customs & traditions</li>
+          <li>Art and music exploration</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+      <div class="module-card">
+        <div class="module-number">2</div>
+        <h4>Leadership Workshop</h4>
+        <ul>
+          <li>Public speaking skills</li>
+          <li>Team building activities</li>
+          <li>Problem-solving challenges</li>
+          <li>Decision making under pressure</li>
+          <li>Conflict resolution techniques</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+      <div class="module-card">
+        <div class="module-number">3</div>
+        <h4>Global Networking</h4>
+        <ul>
+          <li>Meet international participants</li>
+          <li>Professional networking sessions</li>
+          <li>Cross-cultural communication</li>
+          <li>Group project collaboration</li>
+          <li>Alumni network access</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+      <div class="module-card">
+        <div class="module-number">4</div>
+        <h4>City Exploration</h4>
+        <ul>
+          <li>Guided city tours</li>
+          <li>Historic landmark visits</li>
+          <li>Local market experiences</li>
+          <li>Nature and adventure activities</li>
+          <li>Photography & journaling</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+      <div class="module-card">
+        <div class="module-number">5</div>
+        <h4>Certification & Closing</h4>
+        <ul>
+          <li>Final group presentation</li>
+          <li>Certificate of completion</li>
+          <li>Personal reflection session</li>
+          <li>Alumni community welcome</li>
+          <li>Future leadership commitments</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Experience Cycle -->
+<div class="cycle-section mt-5">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <div class="card info-card p-4">
-          <div class="icon-circle">🗓️</div>
-          <h4>Duration</h4>
-          <p class="mb-2">The program lasts <strong>14 days (2 weeks)</strong>:</p>
-          <ul class="mb-0">
-            <li>2 days → Travel & hotel check-in/check-out</li>
-            <li>12 days → Activities and experiences</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        <div class="soft-card p-4 p-lg-5 h-100">
-          <h3 class="section-title">3-Day Experience Cycle</h3>
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="info-card card p-4">
-                <h5>Day 1 – Leadership Conference</h5>
-                <p class="mb-0">Workshops, lectures, and idea-sharing sessions.</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="info-card card p-4">
-                <h5>Day 2 – Cultural Exchange</h5>
-                <p class="mb-0">Participants present and experience different cultures.</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="info-card card p-4">
-                <h5>Day 3 – City Exploration</h5>
-                <p class="mb-0">Visits to historical sites and local attractions.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="text-white text-center fw-bold mb-2">Experience Cycle</h2>
+    <div class="section-line"></div>
+    <div class="row g-4 justify-content-center">
 
-    <div class="text-center mt-5 mb-4">
-      <h2 class="section-title">Host Countries & Cities</h2>
-      <p class="section-subtitle mx-auto">Participants engage with culture, leadership, and exploration through carefully planned destination experiences.</p>
-    </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="cycle-card">
+          <div class="cycle-day">Day 1</div>
+          <div class="cycle-icon"><i class="bi bi-globe2"></i></div>
+          <h4>Cultural Exchange</h4>
+          <p>Immerse in local culture, traditions, food, and community engagement activities.</p>
+        </div>
+      </div>
 
-    <div class="row g-4">
-      <div class="col-md-6 col-xl-4">
-        <div class="country-card card p-4">
-          <h4>Japan</h4>
-          <div class="mt-2">
-            <span class="city">Tokyo</span>
-            <span class="city">Kyoto</span>
-            <span class="city">Osaka</span>
-          </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="cycle-card">
+          <div class="cycle-day">Day 2</div>
+          <div class="cycle-icon"><i class="bi bi-person-check-fill"></i></div>
+          <h4>Leadership & Learning</h4>
+          <p>Participate in leadership workshops, team challenges, and skill-building sessions.</p>
         </div>
       </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="country-card card p-4">
-          <h4>Singapore</h4>
-          <div class="mt-2">
-            <span class="city">Singapore City</span>
-            <span class="city">Sentosa</span>
-            <span class="city">Jurong</span>
-          </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="cycle-card">
+          <div class="cycle-day">Day 3</div>
+          <div class="cycle-icon"><i class="bi bi-map-fill"></i></div>
+          <h4>City Exploration</h4>
+          <p>Explore iconic landmarks, local markets, and hidden gems of each host city.</p>
         </div>
       </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="country-card card p-4">
-          <h4>China</h4>
-          <div class="mt-2">
-            <span class="city">Beijing</span>
-            <span class="city">Shanghai</span>
-            <span class="city">Guangzhou</span>
-          </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Host Countries -->
+<div class="countries-section">
+  <div class="container">
+    <h2 class="section-title">Host Countries & Cities</h2>
+    <div class="section-line"></div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="country-card">
+          <div class="country-flag">🇯🇵</div>
+          <h5>Japan</h5>
+          <small class="text-muted">Tokyo</small>
         </div>
       </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="country-card card p-4">
-          <h4>Greece</h4>
-          <div class="mt-2">
-            <span class="city">Athens</span>
-            <span class="city">Thessaloniki</span>
-            <span class="city">Santorini</span>
-          </div>
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="country-card">
+          <div class="country-flag">🇸🇬</div>
+          <h5>Singapore</h5>
+          <small class="text-muted">Singapore</small>
         </div>
       </div>
-      <div class="col-md-6 col-xl-4">
-        <div class="country-card card p-4">
-          <h4>England</h4>
-          <div class="mt-2">
-            <span class="city">London</span>
-            <span class="city">Manchester</span>
-            <span class="city">Birmingham</span>
-          </div>
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="country-card">
+          <div class="country-flag">🇬🇷</div>
+          <h5>Greece</h5>
+          <small class="text-muted">Athens</small>
+        </div>
+      </div>
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="country-card">
+          <div class="country-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+          <h5>England</h5>
+          <small class="text-muted">Birmingham</small>
+        </div>
+      </div>
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="country-card">
+          <div class="country-flag">🇨🇳</div>
+          <h5>China</h5>
+          <small class="text-muted">Beijing</small>
+        </div>
+        </div>
+      <div class="col-md-2 col-4" data-aos="fade-up" data-aos-delay="350">
+        <div class="country-card">
+          <div class="country-flag">🇦🇫</div>
+          <h5>Afghanistan</h5>
+          <small class="text-muted">Kabul</small>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
+<!-- Apply -->
+<div class="apply-section">
+  <div class="container" data-aos="zoom-in">
+    <h2>Ready for the Journey? ✈️</h2>
+    <p class="mb-4 fs-5">Apply now and experience 14 days that will change your life forever.</p>
+    <a href="contact.html" class="btn btn-apply">Apply Now</a>
+  </div>
+</div>
 
-<footer class="footer mt-5 pt-5 pb-4">
+<footer>
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4">
-        <h5 class="text-white">Global Bridge Leaders</h5>
-        <p class="mb-0">Connecting Cultures. Building Leaders.</p>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>🌍 Global Bridge Leaders</h5>
+        <p style="color:rgba(255,255,255,0.7)">Connecting Cultures. Building Leaders.</p>
       </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">Quick Links</h6>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="about.html">About</a>
-          <a href="program.html">Program</a>
-          <a href="team.html">Team</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="contact.html">Contact</a>
-        </div>
+      <div class="col-md-4 mb-3">
+        <h6>Quick Links</h6>
+        <a href="about.html" class="d-block">About</a>
+        <a href="program.html" class="d-block">Program</a>
+        <a href="pricing.html" class="d-block">Pricing</a>
+        <a href="contact.html" class="d-block">Contact</a>
       </div>
-      <div class="col-lg-4">
-        <h6 class="text-white">General Contact</h6>
-        <p class="mb-1"><a href="mailto:support@globalbridgeleaders.org">support@globalbridgeleaders.org</a></p>
-        <p class="mb-0 small">© 2026 Global Bridge Leaders. All rights reserved.</p>
+      <div class="col-md-4 mb-3">
+        <h6>Contact</h6>
+        <p style="color:rgba(255,255,255,0.7)">support@globalbridgeleaders.org</p>
       </div>
     </div>
+    <hr style="border-color:rgba(255,255,255,0.2)">
+    <p class="text-center mb-0" style="color:rgba(255,255,255,0.6)">© 2026 Global Bridge Leaders | AUAF ITC Final Project</p>
   </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>
+`
